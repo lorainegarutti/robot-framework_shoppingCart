@@ -10,17 +10,19 @@ ${APP_PACKAGE}      com.novapontocom.casasbahia
 ${APP_ACTIVITY}     br.com.viavarejo.feature.home.HomeActivity
 ${AUTOMATION_NAME}  appium
 
+${PERMISSION_BUTTON}
+
 *** Keywords ***
-Deveria começar o teste
+Should start the test case
     Open Application  ${REMOTE_URL}  platformName=${PLATFORM_NAME}  avd=${AVD}
     ...               deviceName=${DEVICE_NAME}  appPackage=${APP_PACKAGE}  appActivity=${APP_ACTIVITY}  automationName=${AUTOMATION_NAME}
     Start Screen Recording    
 
-Deveria aceitar as permissões
-    Click Element  id=com.android.packageinstaller:id/permission_allow_button
-    Click Element  id=com.android.packageinstaller:id/permission_allow_button
+Should accept permissions
+    Click Element  ${PERMISSION_BUTTON}
+    Click Element  ${PERMISSION_BUTTON}
 
-Deveria finalizar o teste
+Should finish the test case
     Stop Screen Recording
     Capture Page Screenshot
     Close Application

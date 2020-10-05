@@ -1,32 +1,26 @@
-# Sobre o projeto
-Será feita a automatização de um caminho feliz de carrinho de compras, utilizando Android, utilizando o aplicativo das Casas Bahia
+# About the project
+Test suites using the Android app from Casas Bahia e-commerce.
 
-###
-Utilizei o tutorial para Appium da Maria Clara como base para desenvolvimento.
-Disponível em: https://github.com/clarabez/appium
+Maria Clara Appium tutorials helped me to set up. Available at: https://github.com/clarabez/appium
 
-# Sobre o Robot
-Robot é um framework escrito em Python para automatização de testes, de estrutura complexa e os casos de teste podem ser escritos em linguagem natural baseada na identação.
-Neste exemplo utilizaremos com a Appium Library para automatização de testes em aplicações mobile (.apk).
-
-## Para rodar os testes
-Em um terminal:
+## Running the tests
+Terminal 1:
 > robot -d results/ tests/functional/
 
-Em outro terminal:
+Terminal 2:
 > appium --address 127.0.0.1
 
-### Estrutura de pastas do Robot
+### Robot folder struture
 resource / results / tests
 
 #### resource
-Conterá arquivos para definição de 'variables' e 'keywords'.
+Contains 'variables' and 'keywords' project definitions.
 
 #### results
-Conterá:
-- screenshots gerados a partir do momento de erro dos testes, 
-- log de execução dos testes e estatísticas em .html, 
-- relatório de execução de testes em .html
+- error screenshots, 
+- video automation execution,
+- test logs .html, 
+- test report .html
 
 #### tests
-Conterá arquivos para definição de 'test cases'.
+Contains 'test cases' project definitions.

@@ -1,18 +1,25 @@
 *** Settings ***
 Library  AppiumLibrary
 
-*** Keywords ***
-Deveria fazer busca por um produto
-    [Arguments]  ${SEARCH}  
-    Wait Until Element Is Visible  com.novapontocom.casasbahia:id/imageViewItemBanner
-    Click Element  com.novapontocom.casasbahia:id/image_search
-    Wait Until Page Contains Element  com.novapontocom.casasbahia:id/editTextSearchProducts
-    Input Text  com.novapontocom.casasbahia:id/editTextSearchProducts   ${SEARCH} 
-    Wait Until Page Contains  ${SEARCH}
+*** Variables ***
+${HOME_BANNER}  com.novapontocom.casasbahia:id/imageViewItemBanner
+${SEARCH_BUTTON}  com.novapontocom.casasbahia:id/image_search
+${SEARCH_INPUT}  com.novapontocom.casasbahia:id/editTextSearchProducts
+${PRODUCTS_LIST}  com.novapontocom.casasbahia:id/productListingView
+${PRODUCT_NAME}  com.novapontocom.casasbahia:id/textViewProductName
 
-Deveria abrir o primeiro resultado da busca
-    [Arguments]  ${SEARCH} 
+*** Keywords ***
+Should search for a product
+    [Arguments]  ${search_text}  
+    Wait Until Element Is Visible  ${HOME_BANNER}
+    Click Element  ${SEARCH_BUTTON}
+    Wait Until Page Contains Element  ${SEARCH_INPUT}
+    Input Text  ${SEARCH_INPUT}  ${search_text}
+    Wait Until Page Contains  ${search_text}
+
+Should open the first result
+    [Arguments]  ${search_text} 
     Click Element At Coordinates  206  303
-    Wait Until Page Contains Element  com.novapontocom.casasbahia:id/productListingView
-    Element Should Contain Text  com.novapontocom.casasbahia:id/textViewProductName  ${SEARCH} 
+    Wait Until Page Contains Element  ${PRODUCTS_LIST}
+    Element Should Contain Text  ${PRODUCT_NAME}  ${search_text} 
 
