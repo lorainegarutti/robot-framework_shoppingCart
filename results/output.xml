@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201005 18:24:43.789" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201006 11:41:58.426" rpa="false">
 <suite id="s1" name="Functional" source="C:\Users\Loraine\Desktop\robot-framework_shoppingCart\tests\functional">
-<suite id="s1-s1" name="Valid Search" source="C:\Users\Loraine\Desktop\robot-framework_shoppingCart\tests\functional\valid_search.robot">
-<test id="s1-s1-t1" name="Valid search for products at Casas Bahia app">
+<suite id="s1-s1" name="Valid Search-Gherkin" source="C:\Users\Loraine\Desktop\robot-framework_shoppingCart\tests\functional\valid_search-gherkin.robot">
+<test id="s1-s1-t1" name="Search for products at Casas Bahia app">
 <kw name="Should start the test case" library="common" type="setup">
 <kw name="Open Application" library="AppiumLibrary">
 <doc>Opens a new application to given Appium server.
@@ -20,80 +20,228 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>appActivity=${APP_ACTIVITY}</arg>
 <arg>automationName=${AUTOMATION_NAME}</arg>
 </arguments>
-<status status="PASS" starttime="20201005 18:24:44.353" endtime="20201005 18:25:33.373"></status>
+<status status="PASS" starttime="20201006 11:42:00.399" endtime="20201006 11:42:27.437"></status>
 </kw>
 <kw name="Start Screen Recording" library="AppiumLibrary">
 <doc>Starts a asynchronous Screen Recording for the current open                  application.</doc>
-<status status="PASS" starttime="20201005 18:25:33.379" endtime="20201005 18:25:34.950"></status>
+<status status="PASS" starttime="20201006 11:42:27.442" endtime="20201006 11:42:29.616"></status>
 </kw>
-<status status="PASS" starttime="20201005 18:24:44.352" endtime="20201005 18:25:34.951"></status>
+<status status="PASS" starttime="20201006 11:42:00.387" endtime="20201006 11:42:29.618"></status>
 </kw>
+<kw name="Given I am at the app homepage" library="functional_keywords">
 <kw name="Should accept permissions" library="common">
 <kw name="Click Element" library="AppiumLibrary">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>id=com.android.packageinstaller:id/permission_allow_button</arg>
+<arg>${PERMISSION_BUTTON}</arg>
 </arguments>
-<msg timestamp="20201005 18:25:34.970" level="INFO">Clicking element 'id=com.android.packageinstaller:id/permission_allow_button'.</msg>
-<status status="PASS" starttime="20201005 18:25:34.966" endtime="20201005 18:25:35.286"></status>
+<msg timestamp="20201006 11:42:29.654" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" starttime="20201006 11:42:29.643" endtime="20201006 11:42:30.585"></status>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>id=com.android.packageinstaller:id/permission_allow_button</arg>
+<arg>${PERMISSION_BUTTON}</arg>
 </arguments>
-<msg timestamp="20201005 18:25:35.290" level="INFO">Clicking element 'id=com.android.packageinstaller:id/permission_allow_button'.</msg>
-<status status="PASS" starttime="20201005 18:25:35.287" endtime="20201005 18:25:36.926"></status>
+<msg timestamp="20201006 11:42:30.590" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" starttime="20201006 11:42:30.585" endtime="20201006 11:42:32.290"></status>
 </kw>
-<status status="PASS" starttime="20201005 18:25:34.965" endtime="20201005 18:25:36.927"></status>
+<status status="PASS" starttime="20201006 11:42:29.642" endtime="20201006 11:42:32.290"></status>
 </kw>
-<kw name="Should search for a product" library="functional_keywords">
-<arguments>
-<arg>${product_items}</arg>
-</arguments>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/imageViewItemBanner</arg>
+<arg>${HOME_BANNER}</arg>
 </arguments>
-<status status="PASS" starttime="20201005 18:25:36.930" endtime="20201005 18:25:45.110"></status>
+<status status="PASS" starttime="20201006 11:42:32.291" endtime="20201006 11:42:42.216"></status>
 </kw>
+<status status="PASS" starttime="20201006 11:42:29.640" endtime="20201006 11:42:42.217"></status>
+</kw>
+<kw name="When I search for a product" library="functional_keywords">
+<arguments>
+<arg>${PRODUCT_ITEMS}</arg>
+</arguments>
 <kw name="Click Element" library="AppiumLibrary">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/image_search</arg>
+<arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20201005 18:25:45.114" level="INFO">Clicking element 'com.novapontocom.casasbahia:id/image_search'.</msg>
-<status status="PASS" starttime="20201005 18:25:45.110" endtime="20201005 18:25:46.190"></status>
+<msg timestamp="20201006 11:42:42.250" level="INFO">Clicking element 'com.novapontocom.casasbahia:id/image_search'.</msg>
+<status status="PASS" starttime="20201006 11:42:42.245" endtime="20201006 11:42:45.247"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/editTextSearchProducts</arg>
+<arg>${SEARCH_INPUT}</arg>
 </arguments>
-<status status="PASS" starttime="20201005 18:25:46.190" endtime="20201005 18:25:48.872"></status>
+<status status="PASS" starttime="20201006 11:42:45.248" endtime="20201006 11:42:47.844"></status>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/editTextSearchProducts</arg>
+<arg>${SEARCH_INPUT}</arg>
 <arg>${search_text}</arg>
 </arguments>
-<msg timestamp="20201005 18:25:48.877" level="INFO">Typing text 'Cafeteira' into text field 'com.novapontocom.casasbahia:id/editTextSearchProducts'</msg>
-<status status="PASS" starttime="20201005 18:25:48.873" endtime="20201005 18:25:49.435"></status>
+<msg timestamp="20201006 11:42:47.854" level="INFO">Typing text 'Cafeteira' into text field 'com.novapontocom.casasbahia:id/editTextSearchProducts'</msg>
+<status status="PASS" starttime="20201006 11:42:47.846" endtime="20201006 11:42:49.029"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="AppiumLibrary">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>${search_text}</arg>
 </arguments>
-<status status="PASS" starttime="20201005 18:25:49.435" endtime="20201005 18:25:52.098"></status>
+<status status="PASS" starttime="20201006 11:42:49.029" endtime="20201006 11:42:52.591"></status>
 </kw>
-<status status="PASS" starttime="20201005 18:25:36.929" endtime="20201005 18:25:52.098"></status>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>206</arg>
+<arg>303</arg>
+</arguments>
+<msg timestamp="20201006 11:42:52.597" level="INFO">Pressing at (206, 303).</msg>
+<status status="PASS" starttime="20201006 11:42:52.592" endtime="20201006 11:42:53.983"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:42:42.243" endtime="20201006 11:42:53.986"></status>
+</kw>
+<kw name="Then I should visualize the results" library="functional_keywords">
+<arguments>
+<arg>${PRODUCT_ITEMS}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${PRODUCTS_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 11:42:53.995" endtime="20201006 11:42:57.578"></status>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${PRODUCT_NAME}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<msg timestamp="20201006 11:42:57.586" level="INFO">Verifying element 'com.novapontocom.casasbahia:id/textViewProductName' contains text 'Cafeteira'.</msg>
+<status status="PASS" starttime="20201006 11:42:57.579" endtime="20201006 11:42:59.557"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:42:53.994" endtime="20201006 11:42:59.557"></status>
+</kw>
+<kw name="Should finish the test case" library="common" type="teardown">
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(only on Android).</doc>
+<msg timestamp="20201006 11:43:02.666" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-1.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-1.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201006 11:42:59.569" endtime="20201006 11:43:02.668"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20201006 11:43:04.272" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201006 11:43:02.670" endtime="20201006 11:43:04.273"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20201006 11:43:04.274" endtime="20201006 11:43:12.564"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:42:59.568" endtime="20201006 11:43:12.567"></status>
+</kw>
+<tags>
+<tag>Smoke-test</tag>
+</tags>
+<status status="PASS" starttime="20201006 11:42:00.331" endtime="20201006 11:43:12.591" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201006 11:41:58.750" endtime="20201006 11:43:12.626"></status>
+</suite>
+<suite id="s1-s2" name="Valid Search" source="C:\Users\Loraine\Desktop\robot-framework_shoppingCart\tests\functional\valid_search.robot">
+<test id="s1-s2-t1" name="Valid search for products at Casas Bahia app">
+<kw name="Should start the test case" library="common" type="setup">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>avd=${AVD}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 11:43:15.087" endtime="20201006 11:43:36.971"></status>
+</kw>
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts a asynchronous Screen Recording for the current open                  application.</doc>
+<status status="PASS" starttime="20201006 11:43:36.974" endtime="20201006 11:43:39.049"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:43:15.084" endtime="20201006 11:43:39.049"></status>
+</kw>
+<kw name="Should accept permissions" library="common">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PERMISSION_BUTTON}</arg>
+</arguments>
+<msg timestamp="20201006 11:43:39.071" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" starttime="20201006 11:43:39.065" endtime="20201006 11:43:39.754"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PERMISSION_BUTTON}</arg>
+</arguments>
+<msg timestamp="20201006 11:43:39.758" level="INFO">Clicking element 'com.android.packageinstaller:id/permission_allow_button'.</msg>
+<status status="PASS" starttime="20201006 11:43:39.754" endtime="20201006 11:43:42.384"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:43:39.063" endtime="20201006 11:43:42.384"></status>
+</kw>
+<kw name="Should search for a product" library="functional_keywords">
+<arguments>
+<arg>${PRODUCT_ITEMS}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${HOME_BANNER}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 11:43:42.402" endtime="20201006 11:43:51.043"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20201006 11:43:51.051" level="INFO">Clicking element 'com.novapontocom.casasbahia:id/image_search'.</msg>
+<status status="PASS" starttime="20201006 11:43:51.043" endtime="20201006 11:43:53.560"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${SEARCH_INPUT}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 11:43:53.597" endtime="20201006 11:43:56.195"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<msg timestamp="20201006 11:43:56.200" level="INFO">Typing text 'Cafeteira' into text field 'com.novapontocom.casasbahia:id/editTextSearchProducts'</msg>
+<status status="PASS" starttime="20201006 11:43:56.196" endtime="20201006 11:44:01.964"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<status status="PASS" starttime="20201006 11:44:01.965" endtime="20201006 11:44:03.822"></status>
+</kw>
+<status status="PASS" starttime="20201006 11:43:42.401" endtime="20201006 11:44:03.827"></status>
 </kw>
 <kw name="Should open the first result" library="functional_keywords">
 <arguments>
-<arg>${product_items}</arg>
+<arg>${PRODUCT_ITEMS}</arg>
 </arguments>
 <kw name="Click Element At Coordinates" library="AppiumLibrary">
 <doc>click element at a certain coordinate</doc>
@@ -101,64 +249,65 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>206</arg>
 <arg>303</arg>
 </arguments>
-<msg timestamp="20201005 18:25:52.106" level="INFO">Pressing at (206, 303).</msg>
-<status status="PASS" starttime="20201005 18:25:52.102" endtime="20201005 18:25:53.000"></status>
+<msg timestamp="20201006 11:44:03.860" level="INFO">Pressing at (206, 303).</msg>
+<status status="PASS" starttime="20201006 11:44:03.855" endtime="20201006 11:44:05.631"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/productListingView</arg>
+<arg>${PRODUCTS_LIST}</arg>
 </arguments>
-<status status="PASS" starttime="20201005 18:25:53.000" endtime="20201005 18:25:55.949"></status>
+<status status="PASS" starttime="20201006 11:44:05.631" endtime="20201006 11:44:07.726"></status>
 </kw>
 <kw name="Element Should Contain Text" library="AppiumLibrary">
 <doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
 <arguments>
-<arg>com.novapontocom.casasbahia:id/textViewProductName</arg>
+<arg>${PRODUCT_NAME}</arg>
 <arg>${search_text}</arg>
 </arguments>
-<msg timestamp="20201005 18:25:55.957" level="INFO">Verifying element 'com.novapontocom.casasbahia:id/textViewProductName' contains text 'Cafeteira'.</msg>
-<status status="PASS" starttime="20201005 18:25:55.950" endtime="20201005 18:25:59.305"></status>
+<msg timestamp="20201006 11:44:07.733" level="INFO">Verifying element 'com.novapontocom.casasbahia:id/textViewProductName' contains text 'Cafeteira'.</msg>
+<status status="PASS" starttime="20201006 11:44:07.726" endtime="20201006 11:44:08.091"></status>
 </kw>
-<status status="PASS" starttime="20201005 18:25:52.100" endtime="20201005 18:25:59.305"></status>
+<status status="PASS" starttime="20201006 11:44:03.850" endtime="20201006 11:44:08.092"></status>
 </kw>
 <kw name="Should finish the test case" library="common" type="teardown">
 <kw name="Stop Screen Recording" library="AppiumLibrary">
 <doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(only on Android).</doc>
-<msg timestamp="20201005 18:26:01.000" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-1.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-1.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201005 18:25:59.473" endtime="20201005 18:26:01.001"></status>
+<msg timestamp="20201006 11:44:11.217" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-2.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-2.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201006 11:44:08.103" endtime="20201006 11:44:11.218"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20201005 18:26:02.940" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201005 18:26:01.002" endtime="20201005 18:26:02.941"></status>
+<msg timestamp="20201006 11:44:12.787" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201006 11:44:11.220" endtime="20201006 11:44:12.787"></status>
 </kw>
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20201005 18:26:02.942" endtime="20201005 18:26:05.732"></status>
+<status status="PASS" starttime="20201006 11:44:12.787" endtime="20201006 11:44:18.775"></status>
 </kw>
-<status status="PASS" starttime="20201005 18:25:59.472" endtime="20201005 18:26:05.733"></status>
+<status status="PASS" starttime="20201006 11:44:08.101" endtime="20201006 11:44:18.778"></status>
 </kw>
 <tags>
 <tag>Smoke-test</tag>
 </tags>
-<status status="PASS" starttime="20201005 18:24:44.351" endtime="20201005 18:26:05.749" critical="yes"></status>
+<status status="PASS" starttime="20201006 11:43:15.076" endtime="20201006 11:44:19.153" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20201005 18:24:43.866" endtime="20201005 18:26:05.987"></status>
+<status status="PASS" starttime="20201006 11:43:14.902" endtime="20201006 11:44:19.933"></status>
 </suite>
-<status status="PASS" starttime="20201005 18:24:43.792" endtime="20201005 18:26:06.505"></status>
+<status status="PASS" starttime="20201006 11:41:58.444" endtime="20201006 11:44:20.022"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Smoke-test</stat>
+<stat pass="2" fail="0">Smoke-test</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Functional">Functional</stat>
-<stat pass="1" fail="0" id="s1-s1" name="Valid Search">Functional.Valid Search</stat>
+<stat pass="2" fail="0" id="s1" name="Functional">Functional</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Valid Search-Gherkin">Functional.Valid Search-Gherkin</stat>
+<stat pass="1" fail="0" id="s1-s2" name="Valid Search">Functional.Valid Search</stat>
 </suite>
 </statistics>
 <errors>

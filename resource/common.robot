@@ -10,7 +10,7 @@ ${APP_PACKAGE}      com.novapontocom.casasbahia
 ${APP_ACTIVITY}     br.com.viavarejo.feature.home.HomeActivity
 ${AUTOMATION_NAME}  appium
 
-${PERMISSION_BUTTON}
+${PERMISSION_BUTTON}  com.android.packageinstaller:id/permission_allow_button
 
 *** Keywords ***
 Should start the test case
