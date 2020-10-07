@@ -3,14 +3,21 @@ Test suites using the Android app from Casas Bahia e-commerce.
 
 Maria Clara Appium tutorials helped me to set up. Available at: https://github.com/clarabez/appium
 
-## Running the tests
-Terminal 1:
+## Running tests
+#### Terminal 1:
+Running only functional tests:
 > robot -d results/ tests/functional/
 
-Terminal 2:
+For a log with more complexity:
+> robot -d results/ -L trace tests/functional/
+
+Running only smoke-tests (pipelines):
+> robot -d results/ -L trace -i smoke-test tests/functional/
+
+#### Terminal 2:
 > appium --address 127.0.0.1
 
-### Robot folder struture
+## Robot folder struture
 resource / results / tests
 
 #### resource
