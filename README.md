@@ -1,5 +1,6 @@
 # About the project
 Test suites using the Android app from Casas Bahia e-commerce.
+Apk is available on Playstore.
 
 Maria Clara Appium tutorials helped me to set up. Available at: https://github.com/clarabez/appium
 

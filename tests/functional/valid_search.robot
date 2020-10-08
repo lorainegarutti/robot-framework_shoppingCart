@@ -13,6 +13,5 @@ ${PRODUCT_ITEMS}  Cafeteira
 Valid search for products at Casas Bahia app
     [Tags]  Smoke-test
 
-    Should accept permissions
     Should search for a product  ${PRODUCT_ITEMS}
     Should open the first result  ${PRODUCT_ITEMS}

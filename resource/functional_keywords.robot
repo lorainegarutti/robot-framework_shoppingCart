@@ -12,7 +12,6 @@ ${PRODUCT_NAME}  com.novapontocom.casasbahia:id/textViewProductName
 *** Keywords ***
 #gherkin
 Given I am at the app homepage
-    Should accept permissions
     Wait Until Element Is Visible  ${HOME_BANNER}
 
 When I search for a product
