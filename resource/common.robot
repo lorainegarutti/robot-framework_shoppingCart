@@ -4,9 +4,9 @@ Library          AppiumLibrary
 *** Variables ***
 ${REMOTE_URL}               http://127.0.0.1:4723/wd/hub
 ${PLATFORM_NAME}            Android
-${DEVICE_NAME}              emulator-5554
+${DEVICE_NAME}              AppiumPixel
 ${AVD_ARGS}                 -dns-server 8.8.8.8
-${AVD}                      AppiumPixel2Pie
+${AVD}                      AppiumPixel
 ${APP_PACKAGE}              com.novapontocom.casasbahia
 ${APP_ACTIVITY}             br.com.viavarejo.feature.home.HomeActivity
 ${AUTOMATION_NAME}          appium
